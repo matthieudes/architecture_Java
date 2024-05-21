@@ -1,6 +1,5 @@
 package com.ipi.jva324;
 
-import com.ipi.jva324.commande.model.Commande;
 import com.ipi.jva324.stock.model.ProduitEnStock;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,14 +9,14 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class Jva324Application {
+public class Jva324StockApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Jva324Application.class, args);
+		SpringApplication.run(Jva324StockApplication.class, args);
 	}
 	@Bean
 	public RepositoryRestConfigurer repositoryRestConfigurer(){
-		return RepositoryRestConfigurer.withConfig(config -> { config.exposeIdsFor(Commande.class , ProduitEnStock.class);});
+		return RepositoryRestConfigurer.withConfig(config -> { config.exposeIdsFor( ProduitEnStock.class);});
 	}
 	@Bean
 	public RestTemplate restTemplate() {
