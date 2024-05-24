@@ -37,7 +37,7 @@ public class StockTest {
     }
 
     @Test
-    public void testStockSuffisant()  {
+    public void testStock()  {
         // produit créé en init
         ProduitEnStock p1 = produitService.getProduits().get(0);
         Assertions.assertEquals("iPhone 13 Pro", p1.getNom());
